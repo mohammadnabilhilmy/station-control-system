@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css'; // Import cukup satu kali saja
+import IdleTimer from '@/components/IdleTimer';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
