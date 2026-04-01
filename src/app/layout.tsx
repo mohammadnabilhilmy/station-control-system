@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'KAI Commuterline Report - Stasiun Tangerang',
+  title: 'Report Kendala - Stasiun Tangerang',
   description: 'Sistem Monitoring Kendala Operasional Stasiun',
 };
 
