@@ -141,7 +141,7 @@ export default function LoginPage() {
           <div className="mt-10 pt-8 border-t border-white/5 text-center">
             <p className="text-slate-500 text-[9px] font-bold uppercase tracking-[0.2em] leading-relaxed">
               Stasiun Tangerang — Operational System
-              <br />© 2026 PT Kereta Commuter Indonesia - bill and team all rights reserved
+              <br />© 2026 Stasiun Tangerang - bill and team all rights reserved
             </p>
           </div>
         </div>
