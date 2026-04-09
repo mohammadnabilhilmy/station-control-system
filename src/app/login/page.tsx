@@ -51,7 +51,7 @@ export default function LoginPage() {
             {/* Jika file belum ada, ini akan jadi placeholder teks */}
             {!Image && (
               <div className="text-white font-black text-2xl italic">
-                KAI <span className="text-blue-500">Commuter</span>
+                Stasiun <span className="text-blue-500">Tangerang</span>
               </div>
             )}
           </div>
@@ -84,7 +84,7 @@ export default function LoginPage() {
                 <input
                   type="email"
                   className="w-full bg-slate-950/50 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-white outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 transition-all font-medium"
-                  placeholder="nabil.hilmy@kai.id"
+                  placeholder="staf@kci.id"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required

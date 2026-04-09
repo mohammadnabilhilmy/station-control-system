@@ -53,7 +53,7 @@ export default function IdleTimer() {
   if (!isIdle) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm">
+    <div className="fixed inset-0 z-9999 flex items-center justify-center bg-black/60 backdrop-blur-sm">
       <div className="bg-white p-8 rounded-xl shadow-2xl border-t-4 border-navy-kai text-center max-w-sm mx-4">
         <h2 className="text-xl font-bold text-slate-800 mb-2">Sesi Akan Berakhir</h2>
         <p className="text-slate-600 mb-6">Tidak ada aktivitas terdeteksi. Anda akan dialihkan ke halaman login dalam:</p>
