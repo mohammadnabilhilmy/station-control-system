@@ -197,8 +197,9 @@ export default function StationControlSystem() {
       </aside>
 
       {/* ── Main ── */}
-      <main className="flex-1 overflow-y-auto h-screen">
-        <header className="bg-white border-b border-slate-200 px-8 py-4 sticky top-0 z-40 flex items-center justify-between">
+            <main className="flex-1 min-w-0 flex flex-col h-screen overflow-hidden bg-[#f8fafc]">
+        {/* --- HEADER MULAI DI SINI --- */}
+        <header className="bg-white border-b border-slate-200 px-4 md:px-8 py-4 sticky top-0 z-40 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <button
               onClick={() => setSidebarOpen(!isSidebarOpen)}
@@ -207,31 +208,44 @@ export default function StationControlSystem() {
               <Menu size={20} />
             </button>
             <div>
-              <h1 className="font-black text-slate-800 text-xl tracking-tight uppercase">{activeTab === 'dashboard' ? 'Dashboard Analytics' : 'Real-time Monitoring'}</h1>
-              <p className="text-xs text-slate-500 font-bold tracking-widest uppercase">Stasiun Tangerang — KAI Commuter</p>
+              <h1 className="font-black text-slate-800 text-sm md:text-xl tracking-tight uppercase">
+                {activeTab === 'dashboard' ? 'Dashboard Analytics' : 'Real-time Monitoring'}
+              </h1>
+              <p className="text-[10px] md:text-xs text-slate-500 font-bold tracking-widest uppercase">
+                Stasiun Tangerang — KAI Commuter
+              </p>
             </div>
           </div>
-          <div className="flex gap-2">
+
+          <div className="flex gap-2 items-center">
+            {/* Tombol Switch Mode (Dashboard/Monitor) */}
             <button
               onClick={() => setActiveTab(activeTab === 'dashboard' ? 'monitoring' : 'dashboard')}
-              className="flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-xl font-black text-[10px] uppercase border border-blue-100 hover:bg-blue-100 transition-colors mr-4"
+              className="hidden sm:flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-xl font-black text-[10px] uppercase border border-blue-100 hover:bg-blue-100 transition-colors"
             >
-              <MonitorDot size={14} /> {activeTab === 'dashboard' ? 'Buka Live Monitor' : 'Kembali ke Dashboard'}
+              <MonitorDot size={14} /> 
+              {activeTab === 'dashboard' ? 'Live Monitor' : 'Dashboard'}
             </button>
-            <button
-              onClick={exportToPDF}
-              className="flex items-center gap-2 bg-red-50 text-red-600 px-4 py-2 rounded-xl font-black text-[10px] uppercase border border-red-100 hover:bg-red-100 transition-colors"
-            >
-              <FileText size={14} /> PDF
-            </button>
-            <button
-              onClick={exportToExcel}
-              className="flex items-center gap-2 bg-emerald-50 text-emerald-600 px-4 py-2 rounded-xl font-black text-[10px] uppercase border border-emerald-100 hover:bg-emerald-100 transition-colors"
-            >
-              <FileDown size={14} /> EXCEL
-            </button>
+
+            {/* Grup Tombol Export */}
+            <div className="flex gap-1 md:gap-2">
+              <button
+                onClick={exportToPDF}
+                className="flex items-center gap-1.5 bg-red-50 text-red-600 px-3 md:px-4 py-2 rounded-xl font-black text-[9px] md:text-[10px] uppercase border border-red-100"
+              >
+                <FileText size={14} /> <span className="hidden xs:block">PDF</span>
+              </button>
+              <button
+                onClick={exportToExcel}
+                className="flex items-center gap-1.5 bg-emerald-50 text-emerald-600 px-3 md:px-4 py-2 rounded-xl font-black text-[9px] md:text-[10px] uppercase border border-emerald-100"
+              >
+                <FileDown size={14} /> <span className="hidden xs:block">EXCEL</span>
+              </button>
+            </div>
           </div>
         </header>
+        {/* --- HEADER SELESAI DI SINI --- */}
+
 
         <div className="p-8 max-w-7xl mx-auto space-y-8">
           {activeTab === 'dashboard' ? (
