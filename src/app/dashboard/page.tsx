@@ -132,7 +132,14 @@ export default function StationControlSystem() {
   return (
     <div className="flex min-h-screen bg-[#f8fafc]">
       {/* ── Sidebar ── */}
-      <aside className={`${isSidebarOpen ? 'w-64' : 'w-20'} bg-slate-900 transition-all duration-300 flex flex-col text-slate-400 p-4 z-50 fixed h-full lg:relative`}>
+      <aside 
+  className={`
+    ${isSidebarOpen ? 'translate-x-0 w-64' : '-translate-x-full lg:translate-x-0 lg:w-20'} 
+    bg-slate-900 transition-all duration-300 flex flex-col text-slate-400 p-4 z-50 
+    fixed h-full lg:relative
+  `}
+>
+
         <div className="flex items-center gap-3 px-2 mb-10 h-10 overflow-hidden">
           <div className="bg-blue-600 p-2 rounded-xl text-white shrink-0">
             <Activity size={20} />
