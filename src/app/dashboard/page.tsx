@@ -122,21 +122,44 @@ export default function StationControlSystem() {
   return (
     <div className="flex min-h-screen bg-[#f8fafc]">
       {/* ── Sidebar ── */}
-      <aside className={`${isSidebarOpen ? 'translate-x-0 w-64' : '-translate-x-full lg:translate-x-0 lg:w-20'} bg-slate-900 transition-all duration-300 flex flex-col text-slate-400 p-4 z-50 fixed h-full lg:relative`}>
+            {/* ── Sidebar ── */}
+      <aside 
+        className={`
+          ${isSidebarOpen ? 'translate-x-0 w-64' : '-translate-x-full w-0 lg:w-20 lg:translate-x-0'} 
+          bg-slate-900 transition-all duration-300 flex flex-col text-slate-400 p-4 z-50 
+          fixed lg:relative h-full
+        `}
+      >
         <div className="flex items-center gap-3 px-2 mb-10 h-10 overflow-hidden">
-          <div className="bg-blue-600 p-2 rounded-xl text-white shrink-0"><Activity size={20} /></div>
-          <span className={`font-black text-white tracking-widest text-sm transition-opacity ${isSidebarOpen ? 'opacity-100' : 'opacity-0 hidden'}`}>STATION OPS</span>
+          <div className="bg-blue-600 p-2 rounded-xl text-white shrink-0">
+            <Activity size={20} />
+          </div>
+          <span className={`font-black text-white tracking-widest text-sm ${isSidebarOpen ? 'opacity-100' : 'opacity-0 lg:hidden'}`}>STATION OPS</span>
         </div>
 
         <nav className="flex-1 space-y-2">
           <button onClick={() => setActiveTab('dashboard')} className="w-full">
-            <SidebarItem icon={<LayoutDashboard size={20} />} label="Dashboard" active={activeTab === 'dashboard'} isOpen={isSidebarOpen} />
+            <SidebarItem
+              icon={<LayoutDashboard size={20} />}
+              label="Dashboard"
+              active={activeTab === 'dashboard'}
+              isOpen={isSidebarOpen}
+            />
           </button>
           <button onClick={() => setActiveTab('monitoring')} className="w-full">
-            <SidebarItem icon={<MonitorDot size={20} />} label="Live Monitoring" active={activeTab === 'monitoring'} isOpen={isSidebarOpen} />
+            <SidebarItem
+              icon={<MonitorDot size={20} />}
+              label="Live Monitoring"
+              active={activeTab === 'monitoring'}
+              isOpen={isSidebarOpen}
+            />
           </button>
           <Link href="/report">
-            <SidebarItem icon={<ClipboardList size={20} />} label="Report Kendala" isOpen={isSidebarOpen} />
+            <SidebarItem
+              icon={<ClipboardList size={20} />}
+              label="Report Kendala"
+              isOpen={isSidebarOpen}
+            />
           </Link>
         </nav>
 
@@ -144,6 +167,7 @@ export default function StationControlSystem() {
           <SidebarItem icon={<LogOut size={20} className="text-red-400" />} label="Logout" isOpen={isSidebarOpen} />
         </div>
       </aside>
+
 
       {/* ── Main Content ── */}
       <main className="flex-1 min-w-0 flex flex-col h-screen bg-[#f8fafc]">
